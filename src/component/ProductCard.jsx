@@ -16,6 +16,7 @@ const ProductCard = ({ product }) => {
     <Card
       sx={{
         height: "100%",
+        width: 400,
         display: "flex",
         flexDirection: "column",
         transition: "transform 0.2s",

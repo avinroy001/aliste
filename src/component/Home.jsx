@@ -32,17 +32,23 @@ const Home = () => {
   }
 
   return (
-    <Box sx={{ p: 4 }}>
-  <Typography variant="h4" fontWeight="bold" mb={3}>
-    Products
-  </Typography>
-  <Grid container spacing={3}>
-    {products.map((product) => (
-      <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
-        <ProductCard product={product} />
-      </Grid>
-    ))}
-  </Grid>
+    <Box>
+
+  <Grid 
+  container 
+  spacing={4} 
+  justifyContent="center" 
+  alignItems="center"
+  sx={{ minHeight: '100vh' }} 
+  mt={4}
+>
+  {products.map((product) => (
+    <Grid item xs={12} sm={6} md={4} lg={4} key={product.id}>
+      <ProductCard product={product} />
+    </Grid>
+  ))}
+</Grid>
+
 </Box>
 
   );

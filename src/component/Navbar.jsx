@@ -1,14 +1,16 @@
-// src/components/Navbar.jsx
+// src/component/Navbar.jsx
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Box, Badge } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
+import { useCart } from "./CartContext";
 
 const Navbar = () => {
+  const { cart } = useCart();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="primary">
         <Toolbar>
-
           <Typography
             variant="h6"
             component={RouterLink}
@@ -28,10 +30,11 @@ const Navbar = () => {
               Home
             </Button>
             <Button component={RouterLink} to="/cart" color="inherit">
-              Cart
+              <Badge badgeContent={cart.length} color="secondary">
+                Cart
+              </Badge>
             </Button>
           </Box>
-
         </Toolbar>
       </AppBar>
     </Box>
