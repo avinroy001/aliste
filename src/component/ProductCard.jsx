@@ -1,56 +1,66 @@
-import React from "react";
 import {
   Card,
   CardContent,
   CardMedia,
   Typography,
   Rating,
+  CardActionArea,
   Box,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const ProductCard=({ product })=> {
+const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+
   return (
     <Card
       sx={{
-        width: 250,
-        borderRadius: 2,
-        boxShadow: 3,
-        transition: "transform 0.2s ease-in-out",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        transition: "transform 0.2s",
         "&:hover": {
-          transform: "scale(1.03)",
+          transform: "scale(1.02)",
         },
       }}
     >
-      <CardMedia
-        component="img"
-        height="200"
-        image={product.image}
-        alt={product.title}
-        sx={{ objectFit: "contain", p: 2 }}
-      />
-      <CardContent>
-        <Typography variant="subtitle1" fontWeight={600} gutterBottom>
-          {product.title}
-        </Typography>
-
-        <Typography variant="body1" color="text.primary" fontWeight={500}>
-          ${product.price.toFixed(2)}
-        </Typography>
-
-        <Box display="flex" alignItems="center" mt={1}>
-          <Rating
-            name="read-only-rating"
-            value={product.rating.rate}
-            precision={0.1}
-            readOnly
-            size="small"
+      <CardActionArea
+        onClick={() => navigate(`/product/${product.id}`)}
+        sx={{ flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "stretch" }}
+      >
+        <Box
+          sx={{
+            height: 200,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            p: 2,
+          }}
+        >
+          <CardMedia
+            component="img"
+            image={product.image}
+            alt={product.title}
+            sx={{
+              maxHeight: "100%",
+              maxWidth: "100%",
+              objectFit: "contain",
+            }}
           />
-          <Typography variant="body2" color="text.secondary" ml={0.5}>
-            ({product.rating.count})
-          </Typography>
         </Box>
-      </CardContent>
+
+        <CardContent sx={{ flexGrow: 1 }}>
+          <Typography gutterBottom variant="subtitle1" noWrap>
+            {product.title}
+          </Typography>
+          <Typography variant="subtitle2" fontWeight="bold" gutterBottom>
+            ${product.price.toFixed(2)}
+          </Typography>
+          <Rating value={product.rating.rate} precision={0.1} readOnly size="small" />
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
-}
-export default ProductCard
+};
+
+export default ProductCard;

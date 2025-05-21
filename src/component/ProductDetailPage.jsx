@@ -1,8 +1,7 @@
-// src/pages/ProductDetailPage.jsx
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { fetchProductById } from "../services/api";
-import { useCart } from "../context/CartContext";
+import { useCart } from "./CartContext";
+import axios from "axios";
 import {
   Box,
   Typography,
@@ -22,9 +21,14 @@ const ProductDetailPage = () => {
 
   useEffect(() => {
     const loadProduct = async () => {
-      const data = await fetchProductById(id);
-      setProduct(data);
+      try {
+        const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
+        setProduct(response.data);
+      } catch (error) {
+        console.error("Failed to fetch product:", error);
+      }
     };
+
     loadProduct();
   }, [id]);
 
@@ -96,6 +100,6 @@ const ProductDetailPage = () => {
       </Grid>
     </Box>
   );
-}
-export default ProductDetailPage
+};
 
+export default ProductDetailPage;
