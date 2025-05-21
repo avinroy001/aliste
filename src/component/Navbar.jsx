@@ -1,4 +1,3 @@
-// src/component/Navbar.jsx
 import React from "react";
 import { AppBar, Toolbar, Typography, Button, Box, Badge } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";

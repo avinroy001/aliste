@@ -1,4 +1,3 @@
-// src/pages/CartPage.jsx
 import { Box, Typography, IconButton, TextField, Divider } from "@mui/material";
 import { useCart } from "./CartContext";
 import DeleteIcon from "@mui/icons-material/Delete";
