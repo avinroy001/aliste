@@ -1,71 +1,69 @@
-# Getting Started with Create React App
+E-Shop – React E-Commerce Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+E-Shop is a responsive and modern e-commerce web app built with React.js and Material UI. It fetches product data from Fake Store API and displays them in a clean, responsive grid layout with product cards.
 
-## Available Scripts
+Features
+Fetches and displays products from a public API
+Product cards with image, title, price, and ratings
+Fully responsive layout using MUI Grid
+Hover effect on product cards for interactivity
+Clickable cards navigate to individual product details (placeholder)
 
-In the project directory, you can run:
 
-### `npm start`
+Tech Stack
+React.js
+Material UI (MUI)
+Axios for API calls
+React Router DOM (for navigation)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Folder Structure
+ALISTE_ASSIGNMENT/
+│
+├── aliste/
+│   ├── node_modules/               # Project dependencies
+│   ├── public/
+│   │   └── index.html              # HTML template
+│   ├── src/                        # Source code
+│   │   ├── component/              # Reusable logic/context
+│   │   │   └── CartContext.js      # Context for cart state management
+│   │   ├── CartPage.jsx            # Cart items and checkout
+│   │   ├── Home.jsx                # Product listing page
+│   │   ├── Navbar.jsx              # Top navigation bar
+│   │   ├── ProductCard.jsx         # Product card component
+│   │   ├── ProductDetailPage.jsx   # Detailed product view
+│   │   ├── App.js                  # Main app component
+│   │   ├── App.css                 # App-specific styles
+│   │   ├── index.js                # Entry point
+│   │   └── index.css               # Global styles
+│   ├── package.json                # Project metadata and dependencies
+│   ├── package-lock.json           # Exact dependency versions
+│   ├── .gitignore                  # Git ignored files
+│   └── README.md                   # Project documentation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Installation
+Clone the repository
+git clone https://github.com/avinroy001/aliste.git
+cd aliste
+Install dependencies
+npm install
+Start the development server
+npm start
+Open your browser and go to http://localhost:3000
 
-### `npm test`
+API Used
+FakeStoreAPI
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Customization Tips
+Replace FakeStoreAPI with your own product backend.
+Extend functionality: Add to cart, product filters, search, sorting, authentication, and checkout.
+Create a full product details page under /product/:id.
 
-### `npm run build`
+Future Improvements
+Add shopping cart and localStorage support
+Add user authentication and protected routes
+Create product categories and filters
+Integrate payment gateway
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# aliste
+Contributing
+Contributions, issues, and feature requests are welcome!
+Feel free to open a pull request or submit an issue.
